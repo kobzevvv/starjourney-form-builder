@@ -1,0 +1,46 @@
+{
+    "title": "Fallback: Job Application Form",
+    "fields": [
+        {
+            "title": "What's your full name?",
+            "type": "short_text",
+            "validations": {
+                "required": true
+            }
+        },
+        {
+            "title": "What's your email?",
+            "type": "email",
+            "validations": {
+                "required": true
+            }
+        }
+    ]
+}
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
