@@ -1,8 +1,0 @@
-flask
-openai
-requests
-google-cloud-bigquery
-openpyxl
-python-dotenv
-google-api-python-client
-google-auth 
