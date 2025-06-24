@@ -35,4 +35,5 @@ TYPEFORM_API_KEY = os.environ.get("TYPEFORM_API_KEY")
 LOG_LEVEL = os.environ.get("LOG_LEVEL", "INFO")
 
 # Настройки валидации
-REQUIRED_FIELDS = ["email", "phone"] 
+REQUIRED_FIELDS = ["email", "phone"]
+PROCESS_SUBMISSION_URL = "https://us-central1-qalearn.cloudfunctions.net/process_submission"
