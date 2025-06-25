@@ -1,0 +1,6 @@
+# Игнорировать файл с ключами для безопасности
+creds.json
+generate_form/creds.json
+process_submission/creds.json
+
+certs.json

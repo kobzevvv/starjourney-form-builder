@@ -1,0 +1,8 @@
+flask>=2.0.0
+openai>=1.0.0
+requests>=2.25.0
+google-cloud-bigquery
+openpyxl
+python-dotenv
+google-auth>=2.0.0
+google-api-python-client>=2.0.0 
