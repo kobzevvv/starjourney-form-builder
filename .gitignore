@@ -4,3 +4,4 @@ generate_form/creds.json
 process_submission/creds.json
 
 certs.json
+.DS_Store
