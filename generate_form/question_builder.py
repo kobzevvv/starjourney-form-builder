@@ -25,15 +25,21 @@ def ensure_must_have_questions(questions_list, must_haves):
 def generate_questions_gpt(job_description, must_haves, prompt, openai_api_key):
     """
     Генерирует список вопросов для Typeform через OpenAI, используя промпт из B7.
-    Возвращает список вопросов (list of dict).
+    Возвращает текст (или список строк) с вопросами и характеристиками, без требований к формату.
     """
     logger = logging.getLogger("question_builder")
     if not job_description or not must_haves or not prompt:
         logger.error("Отсутствуют обязательные входные данные для генерации вопросов.")
         raise ValueError("Необходимо указать описание вакансии, must-haves и промпт.")
-    must_have_list = [line.strip('-•: .').strip() for line in must_haves.split('\n') if line.strip()]
+    # must_haves всегда список строк с реальными значениями
+    if isinstance(must_haves, str):
+        must_have_list = [line.strip('-•: .').strip() for line in must_haves.split('\n') if line.strip()]
+    else:
+        must_have_list = [str(m).strip() for m in must_haves if str(m).strip()]
     prompt_full = (
         prompt + "\n"
+        "Для каждого вопроса укажи ref — уникальный читаемый идентификатор (например, email, phone, musthave_english и т.д.). "
+        "Не используй плейсхолдеры или переменные, только реальные значения must have. "
         f"Описание: {job_description}\nMust haves: {', '.join(must_have_list)}"
     )
     try:
@@ -47,10 +53,9 @@ def generate_questions_gpt(job_description, must_haves, prompt, openai_api_key):
             messages=messages,
             temperature=0
         )
-        import json
-        questions = json.loads(response.choices[0].message.content)
-        logger.info(f"Сгенерирован список вопросов: {questions}")
-        return questions
+        content = response.choices[0].message.content
+        logger.error(f"Ответ OpenAI (questions): {content}")
+        return content
     except Exception as e:
         logger.error(f"Ошибка генерации вопросов через OpenAI: {e}")
         raise 

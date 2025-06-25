@@ -35,20 +35,29 @@ def extract_must_haves(must_haves):
 def generate_logic_gpt(questions, must_haves, prompt, openai_api_key, budget=None, fail_url=None, quiz_url=None):
     """
     Генерирует JSON-логику для Typeform через OpenAI, используя вопросы, must-haves и промпт из B8.
-    Добавляет технические требования по jump по зарплате и переходам на thankyou screen с нужными URL.
-    Возвращает dict (logic).
+    Возвращает только jumps/logic (dict), не меняя вопросы.
     """
     logger = logging.getLogger("logic_generator")
     if not questions or not must_haves or not prompt:
         logger.error("Отсутствуют обязательные входные данные для генерации логики.")
         raise ValueError("Необходимо указать вопросы, must-haves и промпт.")
-    must_have_list = [line.strip('-•: .').strip() for line in must_haves.split('\n') if line.strip()]
+    # must_haves всегда список строк с реальными значениями
+    if isinstance(must_haves, str):
+        must_have_list = [line.strip('-•: .').strip() for line in must_haves.split('\n') if line.strip()]
+    else:
+        must_have_list = [str(m).strip() for m in must_haves if str(m).strip()]
     tech_details = f"""
     Технические требования:
+    - Не изменяй список вопросов, только добавь jumps/logic.
+    - Не используй плейсхолдеры или переменные, только реальные значения must have.
     - Если зарплата кандидата выше бюджета ({budget}), сделай jump на вопрос 'Наш бюджет {budget}, вы готовы на эти условия?' (multiple_choice: Да/Нет).
     - Если ответ на этот вопрос 'Нет' — делай jump на thankyou screen с redirect_url: {fail_url}.
     - Если ответ 'Да' — пользователь доходит до основного thankyou screen с redirect_url: {quiz_url}.
     - Остальную логику не добавляй. Используй только jumps внутри Typeform.
+    - Используй только допустимые значения для всех полей logic согласно официальной документации Typeform (https://developer.typeform.com/create/reference/logic/).
+    - Все поля (op, type, action, details, target, value и т.д.) должны быть строго валидны для Typeform API.
+    - Не добавляй лишних свойств, не пропускай обязательные, строго соблюдай типы.
+    Верни только JSON-структуру jumps/logic для Typeform, без вопросов, без пояснений.
     """
     prompt_full = (
         prompt + "\n" + tech_details +
@@ -67,7 +76,22 @@ def generate_logic_gpt(questions, must_haves, prompt, openai_api_key, budget=Non
             temperature=0
         )
         import json
-        logic = json.loads(response.choices[0].message.content)
+        content = response.choices[0].message.content
+        logger.error(f"Ответ OpenAI (logic): {content}")
+        if not content.strip():
+            logger.error("OpenAI вернул пустой ответ при генерации логики!")
+            raise ValueError("OpenAI вернул пустой ответ при генерации логики.")
+        # Извлекаем только JSON-блок
+        match = re.search(r'({[\s\S]*})', content)
+        if not match:
+            logger.error(f"Не удалось найти JSON-блок в ответе OpenAI (logic)! Ответ: {content}")
+            raise ValueError("Не удалось найти JSON-блок в ответе OpenAI (logic)!")
+        json_str = match.group(1)
+        try:
+            logic = json.loads(json_str)
+        except Exception as e:
+            logger.error(f"Ошибка парсинга JSON из ответа OpenAI (logic): {e}. JSON: {json_str}")
+            raise ValueError(f"Ошибка парсинга JSON из ответа OpenAI (logic): {e}")
         logger.info(f"Сгенерирована логика: {logic}")
         return logic
     except Exception as e:

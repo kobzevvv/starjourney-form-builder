@@ -85,6 +85,7 @@ def generate_form(request: Request):
         form_json = sanitize_redirect_url(form_json)
         basic_manual_check(form_json)
         # 5. Отправляем в Typeform
+        logger.info(f"Form JSON before sending to Typeform: {form_json}")
         response = send_to_typeform(form_json, TYPEFORM_API_KEY)
         form_url = response.get('form_url')
         form_link_cell = f"{COLUMN_FORM_LINK}{row_id}"

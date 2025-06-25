@@ -85,7 +85,7 @@ def build_final_redirect_url(fields, contact_refs=("email", "phone")):
 
 def generate_form_json(questions, logic, prompt, openai_api_key):
     """
-    Генерирует финальный JSON формы Typeform через OpenAI, используя вопросы, логику и промпт из B6.
+    Генерирует финальный JSON формы Typeform через OpenAI, используя вопросы (fields), jumps/logic и промпт из B6.
     Возвращает dict.
     """
     logger = logging.getLogger("json_builder")
@@ -94,8 +94,9 @@ def generate_form_json(questions, logic, prompt, openai_api_key):
         raise ValueError("Необходимо указать вопросы и промпт.")
     prompt_full = (
         prompt + "\n"
-        f"Вопросы: {questions}\n"
-        f"Логика: {logic if logic else 'нет логики'}"
+        "Собери финальный JSON для Typeform. Используй вопросы (fields) из списка ниже и jumps/logic (если есть). "
+        "Не добавляй свои вопросы, не меняй структуру fields, просто собери валидный JSON формы. "
+        f"fields: {questions}\nlogic: {logic if logic else 'нет логики'}"
     )
     try:
         client = openai.OpenAI(api_key=openai_api_key)
@@ -111,10 +112,16 @@ def generate_form_json(questions, logic, prompt, openai_api_key):
         import json
         form_json = json.loads(response.choices[0].message.content)
         logger.info(f"Сгенерирован финальный JSON формы: {form_json}")
+        # Валидация и автокоррекция через GPT
+        try:
+            form_json = validate_with_gpt(form_json, openai_api_key)
+        except Exception as e:
+            logger.error(f"Ошибка автокоррекции финального JSON через GPT: {e}. Исходный JSON: {form_json}")
+            raise
         # Формируем redirect_url с подстановками
-        redirect_url = build_final_redirect_url(questions)
+        redirect_url = build_final_redirect_url(form_json["fields"])
         # ... используем redirect_url для thankyou screen ...
-        return form_json
+    return form_json
     except Exception as e:
         logger.error(f"Ошибка генерации финального JSON формы через OpenAI: {e}")
         raise

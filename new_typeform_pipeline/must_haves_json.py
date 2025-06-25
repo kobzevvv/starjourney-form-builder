@@ -144,7 +144,7 @@ def generate_musthaves_questions_json(must_haves, job_description, budget=None):
         
         # Преобразуем budget в число
         try:
-            budget_value = int(float(str(budget).replace(',', '.')))
+            budget_value = int(float(str(budget).replace(',', '.'))) #odd activity
         except (ValueError, TypeError):
             budget_value = 0
         

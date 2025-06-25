@@ -1,0 +1,555 @@
+﻿{
+    "id": "fpGvFmJI",
+    "type": "quiz",
+    "title": "Self Info Form copy for gpt",
+    "workspace": {
+        "href": "https://api.typeform.com/workspaces/LGttCw"
+    },
+    "theme": {
+        "href": "https://api.typeform.com/themes/qHWOQ7"
+    },
+    "settings": {
+        "language": "en",
+        "progress_bar": "proportion",
+        "meta": {
+            "allow_indexing": false
+        },
+        "hide_navigation": true,
+        "is_public": true,
+        "is_trial": false,
+        "show_progress_bar": true,
+        "show_typeform_branding": false,
+        "are_uploads_public": false,
+        "show_time_to_complete": true,
+        "show_number_of_submissions": false,
+        "show_cookie_consent": false,
+        "show_question_number": true,
+        "show_key_hint_on_choices": false,
+        "autosave_progress": true,
+        "free_form_navigation": true,
+        "use_lead_qualification": false,
+        "pro_subdomain_enabled": false,
+        "auto_translate": true,
+        "partial_responses_to_all_integrations": true
+    },
+    "thankyou_screens": [
+        {
+            "id": "UHyn1RCpME8b",
+            "ref": "7357d519-ceea-4680-86cd-d4605be0812c",
+            "title": "redirect to branching",
+            "type": "url_redirect",
+            "properties": {
+                "redirect_url": "https://hiretechfast.typeform.com/to/dCAgtSKo#email={{field:1729c984-b8b6-478b-b964-12e05f6f38d2}}&phone_number={{field:deaa106f-d025-4399-a789-e7653028ac48}}&location={{field:d1fe6a53-cc97-410c-9f44-8e640aa64275}}&baking={{field:243e8d60-b18f-4ae9-8f26-8ad80e1fa26a}}&salary={{var:salary}}"
+            }
+        },
+        {
+            "id": "DefaultTyScreen",
+            "ref": "default_tys",
+            "title": "All done! Thanks for your time.",
+            "type": "thankyou_screen",
+            "properties": {
+                "show_button": false,
+                "share_icons": false
+            }
+        }
+    ],
+    "fields": [
+        {
+            "id": "jhU9dUD8oFqR",
+            "title": "Sei disponibile a trasferirti a Verres o in qualche altra località regolarmente?\nAre you available to move to Verres or some to the town regularly?",
+            "ref": "d1fe6a53-cc97-410c-9f44-8e640aa64275",
+            "properties": {
+                "description": "Our main warehouse and production are located in Verres. We need to build a process for receiving goods and quality control. We will compensate for travel and accommodation expenses.\n\nIl nostro magazzino principale e la nostra produzione si trovano a Verres. Dobbiamo creare un processo per l'accettazione del prodotto e il controllo di qualità. Copriremo le spese di viaggio e alloggio.",
+                "randomize": false,
+                "allow_multiple_selection": false,
+                "allow_other_choice": false,
+                "vertical_alignment": true,
+                "choices": [
+                    {
+                        "id": "tAHRIoH0bFT6",
+                        "ref": "834fa708-e8fc-473c-a5ad-14d766255a23",
+                        "label": "non pronto per essere a Verres | not ready to be in Verres"
+                    },
+                    {
+                        "id": "7qs6WMcXytlW",
+                        "ref": "d364676c-a173-44ab-99d6-70331c180201",
+                        "label": "pronto a trasferirmi a Verres per un'intera giornata lavorativa | ready to move to the Verres for a full working day"
+                    }
+                ]
+            },
+            "validations": {
+                "required": false
+            },
+            "type": "multiple_choice"
+        },
+        {
+            "id": "L8LxH2Xit6as",
+            "title": "What types of food production have you worked with?  \nCon quali tipi di produzione alimentare hai lavorato?  ",
+            "ref": "696c75d4-5eeb-4004-ade8-a37a6c3d2f5b",
+            "properties": {
+                "randomize": false,
+                "allow_multiple_selection": true,
+                "allow_other_choice": false,
+                "vertical_alignment": true,
+                "choices": [
+                    {
+                        "id": "tjWUujUYxqRk",
+                        "ref": "33addd57-718f-4ae7-beac-d6f19b698f09",
+                        "label": "Industrial bakery | Panificazione industriale"
+                    },
+                    {
+                        "id": "1mBhQezNiQGG",
+                        "ref": "a33078f7-776a-4e25-887e-a500dfe13c3d",
+                        "label": "Ready meals / frozen food | Piatti pronti / surgelati"
+                    },
+                    {
+                        "id": "tSfeavQi2QQj",
+                        "ref": "0d9a8b31-0b33-4bc4-89d7-6f5b887008d5",
+                        "label": "Confectionery / sweets | Prodotti dolciari / caramelle"
+                    },
+                    {
+                        "id": "hfR6oDd8w36u",
+                        "ref": "3cc47241-b083-4196-97dd-2a363c412b97",
+                        "label": "Beverage production | Produzione di bevande"
+                    },
+                    {
+                        "id": "r6TbMRSiRQ9A",
+                        "ref": "8d5e0c26-8f75-4279-b115-c8e38dc50008",
+                        "label": "Dairy products | Latticini"
+                    },
+                    {
+                        "id": "gUcD0T1yIFVO",
+                        "ref": "519e95d6-2776-47cf-bcf4-905704fa21b8",
+                        "label": "I haven't worked with food production | Non ho esperienza nella produzione alimentare"
+                    }
+                ]
+            },
+            "validations": {
+                "required": false
+            },
+            "type": "multiple_choice"
+        },
+        {
+            "id": "hG8xMMUJ5hHK",
+            "title": "Do you have experience with baking process control (e.g. convection ovens)?  \nHai esperienza nel controllo dei processi di cottura (es. forni a convezione)? ",
+            "ref": "243e8d60-b18f-4ae9-8f26-8ad80e1fa26a",
+            "properties": {
+                "randomize": false,
+                "allow_multiple_selection": true,
+                "allow_other_choice": false,
+                "vertical_alignment": true,
+                "choices": [
+                    {
+                        "id": "8Ld6WxMVQymB",
+                        "ref": "d70a8728-c821-4dd8-844a-a1348fc8e29f",
+                        "label": "I adjusted temperature/time settings based on product issues | Ho regolato tempo/temperatura in base ai problemi del prodotto"
+                    },
+                    {
+                        "id": "OPPDKVsl7LAZ",
+                        "ref": "7c8ca332-9243-45ac-bd3b-9796259794ca",
+                        "label": "I participated in test baking and documented results | Ho partecipato a test di cottura e documentato i risultati"
+                    },
+                    {
+                        "id": "J715sCs0bZv9",
+                        "ref": "07afa650-387d-4026-b20a-896bf8a41912",
+                        "label": "I supervised operators and ensured standard compliance | Ho supervisionato operatori e verificato il rispetto degli standard"
+                    },
+                    {
+                        "id": "DGwevhbo23BF",
+                        "ref": "5f16f84e-e97f-4995-9305-f2e273f02b95",
+                        "label": "No direct experience | Nessuna esperienza diretta"
+                    }
+                ]
+            },
+            "validations": {
+                "required": true
+            },
+            "type": "multiple_choice"
+        },
+        {
+            "id": "gqTwiCp5i8di",
+            "title": "What experience do you have with food quality control?  \nChe esperienza hai nel controllo qualità alimentare?  ",
+            "ref": "b271f5fb-f080-4f3b-be1a-b2104ebee4b0",
+            "properties": {
+                "randomize": false,
+                "allow_multiple_selection": true,
+                "allow_other_choice": false,
+                "vertical_alignment": true,
+                "choices": [
+                    {
+                        "id": "ky7lRmAO8RNX",
+                        "ref": "4292f66f-4622-4c11-9f0b-c75c5b9d4601",
+                        "label": "I managed production checklists and documented deviations | Ho gestito checklist di produzione e documentato le deviazioni"
+                    },
+                    {
+                        "id": "wJBpZYaLhI6c",
+                        "ref": "a5ac4d85-2cb7-4b65-96a4-ea5851082a9c",
+                        "label": "I investigated incidents (e.g. contamination, foreign objects) | Ho condotto indagini su incidenti (es. contaminazioni, corpi estranei)"
+                    },
+                    {
+                        "id": "qtMLOj1MxRrx",
+                        "ref": "35abaa28-2673-42db-bc05-7ac39aaaf542",
+                        "label": "I set up new QC procedures or improved existing ones | Ho creato o migliorato procedure di controllo qualità"
+                    },
+                    {
+                        "id": "UXTLTXknwSzI",
+                        "ref": "af1e193e-dc98-4774-b4e1-b3b0302a527a",
+                        "label": "I worked closely with auditors or certifying bodies | Ho collaborato con auditor o enti certificatori"
+                    },
+                    {
+                        "id": "pD3ZkRsDZTJB",
+                        "ref": "cffa6e71-f031-4175-aa80-c075338d7a5d",
+                        "label": "No direct experience | Nessuna esperienza diretta"
+                    }
+                ]
+            },
+            "validations": {
+                "required": false
+            },
+            "type": "multiple_choice"
+        },
+        {
+            "id": "MaO5PeL4sXb7",
+            "title": "Have you worked with storage or refrigeration equipment?  \nHai lavorato con impianti di stoccaggio o refrigerazione?  ",
+            "ref": "4ffd7cc8-5f78-4835-a1d6-630f739a0c79",
+            "properties": {
+                "randomize": false,
+                "allow_multiple_selection": true,
+                "allow_other_choice": false,
+                "vertical_alignment": true,
+                "choices": [
+                    {
+                        "id": "3z4mqo1vn7Ic",
+                        "ref": "c9c95af3-bfe8-4ac7-bccf-5724d010ac39",
+                        "label": "Yes, I managed or inspected cold storage | Sì, ho gestito o ispezionato celle frigorifere"
+                    },
+                    {
+                        "id": "AnMs3nfQbCoD",
+                        "ref": "ee45427b-d70e-4ef0-a87a-cb44121d131f",
+                        "label": "Yes, I monitored temperature logs or alarms | Sì, ho monitorato registri o allarmi di temperatura"
+                    },
+                    {
+                        "id": "o6xWssae264F",
+                        "ref": "7097652f-7086-4103-a165-6444340c4b28",
+                        "label": "Only in passing / supported others | Solo marginalmente / ho supportato altri"
+                    },
+                    {
+                        "id": "xDtWvoieITdP",
+                        "ref": "5dc207b3-34ad-453f-a83c-2f8bee2f26a3",
+                        "label": "No experience | Nessuna esperienza"
+                    }
+                ]
+            },
+            "validations": {
+                "required": false
+            },
+            "type": "multiple_choice"
+        },
+        {
+            "id": "EyXkITV6sQzM",
+            "title": "Have you configured or used production checklists?  \nHai configurato o utilizzato checklist di produzione?",
+            "ref": "a83b6ed2-c0df-4e3a-abb9-e728b77f8780",
+            "properties": {
+                "randomize": false,
+                "allow_multiple_selection": true,
+                "allow_other_choice": false,
+                "vertical_alignment": true,
+                "choices": [
+                    {
+                        "id": "qhOtEn5VK4Hb",
+                        "ref": "2c56c4e8-0754-4692-935a-88abaee621d6",
+                        "label": "I created new checklists | Ho creato nuove checklist"
+                    },
+                    {
+                        "id": "YE6UUJSUqYYB",
+                        "ref": "4225e79a-ce51-4f27-8210-f642571d6a24",
+                        "label": "I managed existing checklists and trained staff | Ho gestito checklist esistenti e formato il personale"
+                    },
+                    {
+                        "id": "6ytTAEWfJb55",
+                        "ref": "626d6853-19c6-4ee0-a15e-cc8655bfa5c4",
+                        "label": "I used them daily, but didn’t create them | Le ho usate quotidianamente, ma non le ho create"
+                    },
+                    {
+                        "id": "03dkeqJ2qyah",
+                        "ref": "e350865e-d17a-4d1e-befd-f844f6105203",
+                        "label": "No experience | Nessuna esperienza"
+                    }
+                ]
+            },
+            "validations": {
+                "required": false
+            },
+            "type": "multiple_choice"
+        },
+        {
+            "id": "Lk1YDYdEEQ9Z",
+            "title": "Do you have experience investigating incidents or product defects?  \nHai esperienza nell’indagare su incidenti o difetti di prodotto? ",
+            "ref": "55b55b74-e286-4521-9f60-df93989934fa",
+            "properties": {
+                "randomize": false,
+                "allow_multiple_selection": false,
+                "allow_other_choice": false,
+                "vertical_alignment": true,
+                "choices": [
+                    {
+                        "id": "TgGETcFJ7EYv",
+                        "ref": "467798ee-cde5-4d7b-99da-dd09a14be06f",
+                        "label": "Yes, I conducted root cause analysis and wrote reports | Sì, ho fatto analisi delle cause e scritto report"
+                    },
+                    {
+                        "id": "MVftsaWd0OdO",
+                        "ref": "1dd30fb0-8cd8-4053-ad56-7908f1de3236",
+                        "label": "Yes, but as part of a team | Sì, ma come parte di un team"
+                    },
+                    {
+                        "id": "zeBbcLH78zJM",
+                        "ref": "818b280a-2929-4219-82a8-27d76a321e82",
+                        "label": "No formal experience | Nessuna esperienza formale"
+                    }
+                ]
+            },
+            "validations": {
+                "required": false
+            },
+            "type": "multiple_choice"
+        },
+        {
+            "id": "fH8BMgikIb9D",
+            "title": "Which languages can you speak and write fluently?  \nQuali lingue parli e scrivi fluentemente?  ",
+            "ref": "851ea299-c11a-4bfc-8dae-ddb2e3eb4fae",
+            "properties": {
+                "description": "Spagnola",
+                "randomize": false,
+                "allow_multiple_selection": false,
+                "allow_other_choice": false,
+                "vertical_alignment": true,
+                "choices": [
+                    {
+                        "id": "JZbTV2ioP13K",
+                        "ref": "6ad8b11e-64d8-49a5-96c6-2ed61cf3f3a5",
+                        "label": "English | Inglese"
+                    },
+                    {
+                        "id": "WUXFMA0TnZBJ",
+                        "ref": "6a27eeb5-df54-4687-a7fe-a24612eef492",
+                        "label": "Italian | Italiano"
+                    },
+                    {
+                        "id": "ChYcQkg5P24Q",
+                        "ref": "0d40f4ef-7c82-4612-b1b4-49f1e1c0f4ee",
+                        "label": "Russian | Russo"
+                    },
+                    {
+                        "id": "5Svc6nxDipBm",
+                        "ref": "5b64eb67-9107-4d48-ae4d-6c3eeff809bb",
+                        "label": "German | Tedesco"
+                    },
+                    {
+                        "id": "xCEgWZy7ml6L",
+                        "ref": "90bcef56-d739-47c4-a935-92b7a0e93469",
+                        "label": "Spanish | Spagnola"
+                    }
+                ]
+            },
+            "validations": {
+                "required": false
+            },
+            "type": "multiple_choice"
+        },
+        {
+            "id": "gARcfa25GUJa",
+            "title": "Expected Monthly Salary gross. EUR (for full time job)",
+            "ref": "087f6491-3724-4cc0-8719-4415ae11e8e9",
+            "properties": {
+                "description": "Stipendio mensile gross."
+            },
+            "validations": {
+                "required": false
+            },
+            "type": "number"
+        },
+        {
+            "id": "l6PJKxIfeZg1",
+            "title": "Out maximum Salary budget for the role 5500 EUR gross. Are you ready for the budget?\nIl nostro budget salariale massimo per il ruolo è di 5500 euro lordi. Sei pronto per questo budget?",
+            "ref": "e4dcb7f4-e774-4722-89c8-66688a01140c",
+            "properties": {
+                "description": "But, after checking your resume /CV we might update our requirements specially for you",
+                "randomize": false,
+                "allow_multiple_selection": false,
+                "allow_other_choice": false,
+                "vertical_alignment": true,
+                "choices": [
+                    {
+                        "id": "Q4o2wqD3x90P",
+                        "ref": "5ea20403-17b8-40fb-90af-a64ce33abf25",
+                        "label": "Yes, I am ready for this budget | Sì, sono pronto per questo budget"
+                    },
+                    {
+                        "id": "8WvwJGX7QyQm",
+                        "ref": "bfc760af-c4af-4dc0-9d4d-75b6e2c6d470",
+                        "label": "Not ready for the budget | Non sei pronto per il budget"
+                    }
+                ]
+            },
+            "validations": {
+                "required": false
+            },
+            "type": "multiple_choice"
+        },
+        {
+            "id": "PxBqhVIG1h1e",
+            "title": "Linkedin Profile Link\nLink al profilo Linkedin",
+            "ref": "0b36e088-3350-4c44-8eaf-31f11812632e",
+            "properties": {},
+            "validations": {
+                "required": false
+            },
+            "type": "website"
+        },
+        {
+            "id": "2lQDLtfpGQfw",
+            "title": "Resume | Curriculum Vitae",
+            "ref": "27df0a18-8e4f-4a75-b6c5-30e24a2e838a",
+            "properties": {},
+            "validations": {
+                "required": false
+            },
+            "type": "file_upload"
+        },
+        {
+            "id": "9Z0oGlPRzQzc",
+            "title": "Contact email",
+            "ref": "1729c984-b8b6-478b-b964-12e05f6f38d2",
+            "properties": {},
+            "validations": {
+                "required": true
+            },
+            "type": "email"
+        },
+        {
+            "id": "bo2Nje7f2kfP",
+            "title": "Contact Phone Number",
+            "ref": "deaa106f-d025-4399-a789-e7653028ac48",
+            "properties": {
+                "default_country_code": "IT"
+            },
+            "validations": {
+                "required": true
+            },
+            "type": "phone_number"
+        }
+    ],
+    "hidden": [
+        "utm_source"
+    ],
+    "variables": {
+        "salary": "salary_out_of_budget",
+        "score": 0
+    },
+    "logic": [
+        {
+            "type": "field",
+            "ref": "087f6491-3724-4cc0-8719-4415ae11e8e9",
+            "actions": [
+                {
+                    "action": "set",
+                    "details": {
+                        "target": {
+                            "type": "variable",
+                            "value": "salary"
+                        },
+                        "value": {
+                            "type": "constant",
+                            "value": "salary_in_budget"
+                        }
+                    },
+                    "condition": {
+                        "op": "lower_equal_than",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "087f6491-3724-4cc0-8719-4415ae11e8e9"
+                            },
+                            {
+                                "type": "constant",
+                                "value": 5500
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "e4dcb7f4-e774-4722-89c8-66688a01140c"
+                        }
+                    },
+                    "condition": {
+                        "op": "not_equal",
+                        "vars": [
+                            {
+                                "type": "variable",
+                                "value": "salary"
+                            },
+                            {
+                                "type": "constant",
+                                "value": "salary_in_budget"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "action": "jump",
+                    "details": {
+                        "to": {
+                            "type": "field",
+                            "value": "0b36e088-3350-4c44-8eaf-31f11812632e"
+                        }
+                    },
+                    "condition": {
+                        "op": "always",
+                        "vars": []
+                    }
+                }
+            ]
+        },
+        {
+            "type": "field",
+            "ref": "e4dcb7f4-e774-4722-89c8-66688a01140c",
+            "actions": [
+                {
+                    "action": "set",
+                    "details": {
+                        "target": {
+                            "type": "variable",
+                            "value": "salary"
+                        },
+                        "value": {
+                            "type": "constant",
+                            "value": "salary_in_budget"
+                        }
+                    },
+                    "condition": {
+                        "op": "is",
+                        "vars": [
+                            {
+                                "type": "field",
+                                "value": "e4dcb7f4-e774-4722-89c8-66688a01140c"
+                            },
+                            {
+                                "type": "choice",
+                                "value": "5ea20403-17b8-40fb-90af-a64ce33abf25"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "_links": {
+        "display": "https://hiretechfast.typeform.com/to/fpGvFmJI",
+        "responses": "https://api.typeform.com/forms/fpGvFmJI/responses"
+    }
+}
